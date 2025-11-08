@@ -14,6 +14,7 @@ pub async fn weekly_weather(location: Query<WeeklyWeatherQuery>) -> String {
     let longitude = location.longitude;
 
     let url = format!(
+        // 2025年11月時点で日本は対象外だった
         "https://weather.googleapis.com/v1/forecast/days:lookup?key={}&location.latitude={}&location.longitude={}&days=7",
         get_api_key(),
         latitude,
