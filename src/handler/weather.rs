@@ -14,7 +14,7 @@ pub async fn weekly_weather(location: Query<WeeklyWeatherQuery>) -> String {
     let longitude = location.longitude;
 
     let url = format!(
-        "https://weather.googleapis.com/v1/forecast/days:lookup?key={}location.latitude={}&location.longitude={}&days=7",
+        "https://weather.googleapis.com/v1/forecast/days:lookup?key={}&location.latitude={}&location.longitude={}&days=7",
         get_api_key(),
         latitude,
         longitude,
